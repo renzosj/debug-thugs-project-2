@@ -1,0 +1,20 @@
+Set up
+- initialize local repo (git init)
+- set up remote connection (git remote set-url origin git@github.com:renzosj/debug-thugs-project-2.git)
+- Pull in main branch (git pull origin main)
+
+
+Workflow
+- run git pull origin main on main branch
+  - keep up to date on feature branches + any changes
+- On CLI, git checkout into working branch before making any changes (e.g. git checkout feature/some-feature) NOT main branch
+- make changes on local files
+- stage changes (git add -A)
+- commit changes + message (git commit -m "message here")
+- push changes to remote branch (git push origin feature/some-feature)
+- Make a Pull Request on github repo
+  - Get changes approved
+  - Merge branches
+- After confirming branch merge, checkout to main (git checkout main)
+- run git pull to finish workflow (git pull origin main)
+- Do it again!
