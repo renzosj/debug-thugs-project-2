@@ -5,6 +5,7 @@ Set up
 
 
 Workflow
+- run git status anytime
 - run git pull origin main on main branch
   - keep up to date on feature branches + any changes
 - On CLI, git checkout into working branch before making any changes (e.g. git checkout feature/some-feature) NOT main branch
