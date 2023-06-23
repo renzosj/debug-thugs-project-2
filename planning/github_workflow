@@ -18,3 +18,11 @@ Workflow
 - After confirming branch merge, checkout to main (git checkout main)
 - run git pull to finish workflow (git pull origin main)
 - Do it again!
+
+
+What if somebody made changes and I'm still working on a branch?
+- Time to stash! run (git stash) while working on your branch
+- git checkout main
+- git pull origin main (update local repo with the new changes from remote)
+- git checkout [branch_name] (return to what you were working on!)
+- git stash pop (bring back your changes)
