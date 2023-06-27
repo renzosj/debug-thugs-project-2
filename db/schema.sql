@@ -1,6 +1,7 @@
 Brainstorm dump for table/column ideas
 
 - User table
+    - id
 
 - Messages table
     - id
