@@ -5,50 +5,8 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const handlebars = require('handlebars');
 const fs = require('fs');
-const app = express();
 
-// Function to read the email template file
-const readHTMLTemplate = (templatePath) => {
-    const filePath = path.join(__dirname, templatePath);
-    const html = fs.readFileSync(filePath, 'utf-8');
-    return handlebars.compile(html);
-  };
-  
-  app.post('/send-email', (req, res) => {
-    const { recipient, subject, text } = req.body;
-  
-    // Create a transporter object
-    const transporter = nodemailer.createTransport({
-      service: 'Gmail',
-      auth: {
-        user: 'christinahoang32@gmail.com',
-        pass: 'Linkinparkpark32***'
-      }
-    });
-  
-    // Compile the email template
-    const template = readHTMLTemplate('views/emailTemplate.handlebars');
-  
-    // Create the dynamic content for the email using Handlebars
-    const emailContent = template({ subject: subject, message: text });
-  
-    const mailOptions = {
-      from: 'christinahoang32@gmail.com',
-      to: recipient,
-      subject: subject,
-      html: emailContent
-    };
-  
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.log(error);
-        res.status(500).send('Error sending email');
-      } else {
-        console.log('Email sent: ' + info.response);
-        res.send('Email sent successfully');
-      }
-    });
-  });
+
 
 // Login route (GET)
 router.get('/login', (req, res) => {
