@@ -20,7 +20,7 @@ THEN I am presented with a form that asks for a
     BED TIME
 
 When I fill out the form
-Then an account is created and stored into the back end
+Then an Account is created and stored into the back end
 
 When I have Logged in or Signed up an Account
 Then I am directed to the 
