@@ -21,7 +21,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Routes
-app.use('/', require('./routes/index'));
+app.use('/', require('./controllers/index'));
 
 // Start the server
 app.listen(PORT, () => {
