@@ -2,7 +2,7 @@ Brainstorm dump for table/column ideas
 
 - User table
 
-- Message table
+- Messages table
     - id
     - content
     - receipient
@@ -10,4 +10,4 @@ Brainstorm dump for table/column ideas
     - time-staged
     - time-received
 
-- Slumber Parties
+- Slumber Parties table

@@ -23,6 +23,11 @@ app.use(session({
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
+
+/*
+endpoint/login
+render(login.handlebars)
+*/
 // Start the server
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
