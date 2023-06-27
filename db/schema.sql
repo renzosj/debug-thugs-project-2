@@ -1,14 +1,19 @@
-Brainstorm dump for table/column ideas
+--Brainstorm dump for table/column ideas
 
-- User table
-    - id
+-- User table
+    -- id
 
-- Messages table
-    - id
-    - content
-    - receipient
-    - sender
-    - time-staged
-    - time-received
+-- Messages table
+    -- id
+    -- content
+    -- receipient
+    -- sender
+    -- time-staged
+    -- time-received
 
-- Slumber Parties table
+-- Slumber Parties table
+
+DROP DATABASE IF EXISTS gnk_db;
+CREATE DATABASE gnk_db;
+
+USE gnk_db;
