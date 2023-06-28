@@ -33,7 +33,7 @@ router.post('/login', (req, res) => {
     // Set session and cookie
     req.session.loggedIn = true;
     req.session.username = username;
-    res.redirect('/homepage');
+    res.redirect('/user/dashboard');
   } else {
     // Invalid credentials
     res.render('login', { error: 'Invalid username or password' });
@@ -53,7 +53,7 @@ router.post('/signup', (req, res) => {
   req.session.loggedIn = true;
   req.session.username = req.body.username;
   
-  res.redirect('/dashboard');
+  res.redirect('/user/dashboard');
 });
 
 // homepage route
