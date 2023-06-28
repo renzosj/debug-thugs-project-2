@@ -1,9 +1,9 @@
-IF EXISTS DROP DATABASE gnk_db;
+DROP DATABASE IF EXISTS gnk_db;
 CREATE DATABASE gnk_db;
 
 USE gnk_db;
 
-IF EXISTS DROP TABLE users;
+DROP TABLE IF EXISTS users;
 CREATE TABLE users(
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(100) CHARACTER SET utf8 UNIQUE NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE users(
     created_date DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-IF EXISTS DROP TABLE chats;
+DROP TABLE IF EXISTS chats;
 CREATE TABLE chats(
     chat_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE chats(
     FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE
 );
 
-IF EXISTS DROP TABLE chats_users_mapping;
+DROP TABLE IF EXISTS chats_users_mapping;
 CREATE TABLE chats_users_mapping(
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE chats_users_mapping(
     FOREIGN KEY (chat_id) REFERENCES chats (chat_id) ON DELETE CASCADE
 );
 
-IF EXISTS DROP TABLE messages;
+DROP TABLE IF EXISTS messages;
 CREATE TABLE messages(
     message_id INT PRIMARY KEY AUTO_INCREMENT,
     chat_id INT NOT NULL,
