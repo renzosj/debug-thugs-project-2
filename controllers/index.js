@@ -4,6 +4,11 @@ const express = require('express');
 const router = express.Router();
 
 
+// About route (GET)
+router.get('/about', (req, res) => {
+  res.render('about');
+});
+
 
 // Login route (GET)
 router.get('/login', (req, res) => {
