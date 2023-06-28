@@ -1,0 +1,24 @@
+<!-- email.handlebars -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Email Form</title>
+</head>
+<body>
+  <h1>Email Form</h1>
+  <form action="/send-email" method="post">
+    <label for="email">Recipient Email:</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="subject">Subject:</label>
+    <input type="text" name="subject" id="subject" required>
+
+    <label for="message">Message:</label>
+    <textarea name="message" id="message" rows="5" required></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+</body>
+</html>
