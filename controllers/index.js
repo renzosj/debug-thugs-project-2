@@ -3,6 +3,11 @@
 const express = require('express');
 const router = express.Router();
 
+// About route (GET)
+router.get('/about', (req, res) => {
+  res.render('about');
+});
+
 // Login route (GET)
 router.get('/login', (req, res) => {
   res.render('login');
@@ -12,13 +17,27 @@ router.get('/login', (req, res) => {
 router.post('/login', (req, res) => {
   // Check username and password
   const { username, password } = req.body;
+
+  // Sample user logins for testing
+  const sampleUsers = [
+    { username: 'xtina', password: '12345' },
+    { username: 'kings', password: '123' },
+  ];
+
+  // Find the user in the sampleUsers array
+  const user = sampleUsers.find(user => user.username === username && user.password === password);
+
+
   // Perform authentication logic here, e.g., check if the user exists in the database
-  
-  // Set session and cookie
-  req.session.loggedIn = true;
-  req.session.username = username;
-  
-  res.redirect('/dashboard');
+  if (user) {
+    // Set session and cookie
+    req.session.loggedIn = true;
+    req.session.username = username;
+    res.redirect('/homepage');
+  } else {
+    // Invalid credentials
+    res.render('login', { error: 'Invalid username or password' });
+  }
 });
 
 // Sign up route (GET)
