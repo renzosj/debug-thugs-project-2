@@ -2,6 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
+const User = require('../models/Users');
+const Users = require('../models/Users');
 
 // About route (GET)
 router.get('/about', (req, res) => {
@@ -14,10 +16,23 @@ router.get('/login', (req, res) => {
 });
 
 // Login route (POST)
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
   // Check username and password
   const { username, password } = req.body;
 
+  console.log(username + ' ' + password);
+  // renzo's code to connect login to database
+  // Find User 
+  const userData = await Users.findOne({
+    where: {
+      user_name: username,
+      password: password
+    }
+  });
+
+  console.log(userData);
+  const user = userData.get({ plain: true});
+/*
   // Sample user logins for testing
   const sampleUsers = [
     { username: 'xtina', password: '12345' },
@@ -26,18 +41,20 @@ router.post('/login', (req, res) => {
 
   // Find the user in the sampleUsers array
   const user = sampleUsers.find(user => user.username === username && user.password === password);
-
+*/
 
   // Perform authentication logic here, e.g., check if the user exists in the database
   if (user) {
     // Set session and cookie
     req.session.loggedIn = true;
     req.session.username = username;
-    res.redirect('/user/dashboard');
+    res.render('user-dashboard', user);
   } else {
     // Invalid credentials
     res.render('login', { error: 'Invalid username or password' });
   }
+
+
 });
 
 // Sign up route (GET)

@@ -1,4 +1,4 @@
-INSERT INTO users (username,password,first_name,last_name,email,mobile_phone,bed_time)
+INSERT INTO users (user_name,password,first_name,last_name,email,mobile_phone,bed_time)
 VALUES
     ( "user1","password","Renzo","San Jaun","test1@test.com",1111111111,"22:00:00"),
     ( "user2","password","Matt","Miceli","test2@test.com",2222222222,"00:00:00"),

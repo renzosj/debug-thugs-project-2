@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const exphbs = require('express-handlebars');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
+const sequelize = require('./config/connection');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,10 +26,13 @@ app.use(session({
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
+//bootstrap
+//app.use(express.static(__dirname + ))
+
 // Routes
 app.use('/', require('./controllers/index'));
 app.get('/', (req, res) => {
-  res.render('dashboard'); 
+  res.render('homepage'); 
 });
   app.get('/email', (req, res) => {
     res.render('email');
@@ -68,7 +72,7 @@ app.post('/send-email', (req, res) => {
   });
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+// Start the server with sequelize
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
 });
