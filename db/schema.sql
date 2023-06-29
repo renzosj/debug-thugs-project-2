@@ -38,8 +38,10 @@ DROP TABLE IF EXISTS messages;
 CREATE TABLE messages(
     message_id INT PRIMARY KEY AUTO_INCREMENT,
     chat_id INT NOT NULL,
+    user_id INT NOT NULL,
     message_text LONGTEXT CHARACTER SET utf8 NOT NULL, 
     created_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     delay_send TINYINT(1) NOT NULL DEFAULT 0,
-    FOREIGN KEY (chat_id) REFERENCES chats (chat_id) ON DELETE CASCADE
+    FOREIGN KEY (chat_id) REFERENCES chats (chat_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE
 );
