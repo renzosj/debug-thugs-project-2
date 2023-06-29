@@ -29,7 +29,7 @@ app.set('view engine', 'handlebars');
 app.use('/', require('./controllers/index'));
 app.use('/user', require('./controllers/user'));
 app.get('/', (req, res) => {
-  res.render('homepage'); 
+  res.render('dashboard'); 
 });
   app.get('/email', (req, res) => {
     res.render('email');
