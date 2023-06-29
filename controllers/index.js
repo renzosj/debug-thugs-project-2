@@ -67,4 +67,6 @@ router.get('/homepage', (req, res) => {
   }
 });
 
+router.use('/user', require('./user_view'));
+
 module.exports = router;
