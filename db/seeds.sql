@@ -1,11 +1,11 @@
-INSERT INTO users (username,first_name,last_name,email,mobile_phone,bed_time)
+INSERT INTO users (username,password,first_name,last_name,email,mobile_phone,bed_time)
 VALUES
-    ( "user1","Renzo","San Jaun","test1@test.com",1111111111,"22:00:00"),
-    ( "user2","Matt","Miceli","test2@test.com",2222222222,"00:00:00"),
-    ( "user3","Christina","Hoang","test3@test.com",3333333333,"21:00:00"),
-    ( "user4","Jorden","Lockhart","test4@test.com",4444444444,"21:00:00"),
-    ( "user5","Bia","Shimizu","test5@test.com",5555555555,"23:00:00"),
-    ( "user6","Bob","McBob","test6@test.com",6666666666,"20:00:00");
+    ( "user1","password","Renzo","San Jaun","test1@test.com",1111111111,"22:00:00"),
+    ( "user2","password","Matt","Miceli","test2@test.com",2222222222,"00:00:00"),
+    ( "user3","password","Christina","Hoang","test3@test.com",3333333333,"21:00:00"),
+    ( "user4","password","Jorden","Lockhart","test4@test.com",4444444444,"21:00:00"),
+    ( "user5","password","Bia","Shimizu","test5@test.com",5555555555,"23:00:00"),
+    ( "user6","password","Bob","McBob","test6@test.com",6666666666,"20:00:00");
 
 INSERT INTO chats (user_id,chat_name)
 VALUES
