@@ -27,7 +27,6 @@ app.set('view engine', 'handlebars');
 
 // Routes
 app.use('/', require('./controllers/index'));
-app.use('/user', require('./controllers/user'));
 app.get('/', (req, res) => {
   res.render('dashboard'); 
 });
