@@ -1,9 +1,36 @@
-{{!-- christina testing routes --}}
+<body>
+    <nav class="navbar navbar-dark bg-dark justify-content-between p-1">
+        <a class="navbar-brand">GNK</a>
+        <form class="form-inline d-flex flex-row">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 row-cols-1" type="submit">Search</button>
+        </form>
+    </nav>
+    
+    <main class="d-flex flex-column">
+        <div class="jumbotron m-2 p-5 d-flex flex-column justify-content-center align-items-center">
+            <h1 class="display-1 ">Goodnight, King</h1>
+            <p class="lead">You deserve it.</p>
+            <img id="crown-img" src="../public/assets/images/gnk-logo-proto-01.png" alt="graphic of a crown that wobbles when hovered" width="275" height="175">
+            <hr class="my-3">
+            <p>"The least we each ought to do for someone who treats us like a king or a queen is to treat them like a prince or a princess."
+                -Mokokoma Mokhonoana.</p>
+            <p class="lead">
+                <a class="btn btn-danger btn-lg" href="{{login}}" role="button">Log in</a>
+            </p>
+            <p>Don't have an account?</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="{{signup}}" role="button">Sign up</a>
 
-<h1>Welcome to the homepage</h1>
-<nav>
-    {{!-- Add links to Log-in, Sign-up, and About page --}}
-    <a href="/login">Log-in</a>
-    <a href="/signup">Sign-Up</a>
-    <a href="/about">About</a>
-</nav>
+            </p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.03);">
+        <p>debug thugs ©️ 2023</p>
+        </div>
+    </footer>
+
+</body>
