@@ -11,7 +11,7 @@ CREATE TABLE users(
     last_name VARCHAR(100) CHARACTER SET utf8,
     email VARCHAR(100) CHARACTER SET utf8 UNIQUE NOT NULL,
     mobile_phone INT,
-    bed_time DATETIME NOT NULL,
+    bed_time TIME NOT NULL,
     created_date DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
