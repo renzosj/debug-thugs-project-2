@@ -1,1 +1,25 @@
-<h1>Welcome to your dashboard</h1>
+<h1>Welcome to your dashboard {{first_name}}!</h1>
+
+{{!-- class names have no corresponding css yet,
+i just put em there as ideas and will be replaced with bootstrap ones most likely --}}
+<div class="user-card">
+  <div class="user-card-header">
+    {{user_name}}'s Profile 
+  </div>
+  <div class="user-card-body">
+    <p>
+      Joined at:
+      {{created_date}}
+    </p>
+    <p>
+      Email:
+      {{email}}
+    </p>
+    {{!-- Idea for gender choice feature, king queen, squire, jester, etc. --}}
+    {{!-- {{#if has_nuts}}
+      <p class="has-nuts">
+        Contains Nuts
+      </p>
+    {{/if}} --}}
+  </div>
+</div>
