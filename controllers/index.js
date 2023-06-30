@@ -2,7 +2,6 @@
 
 const express = require('express');
 const router = express.Router();
-const User = require('../models/Users');
 const Users = require('../models/Users');
 
 // About route (GET)
@@ -20,7 +19,6 @@ router.post('/login', async (req, res) => {
   // Check username and password
   const { username, password } = req.body;
 
-  console.log(username + ' ' + password);
   // renzo's code to connect login to database
   // Find User 
   const userData = await Users.findOne({
@@ -30,7 +28,7 @@ router.post('/login', async (req, res) => {
     }
   });
 
-  console.log(userData);
+  //console.log(userData);
   const user = userData.get({ plain: true});
 /*
   // Sample user logins for testing

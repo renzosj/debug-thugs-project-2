@@ -5,6 +5,7 @@ const exphbs = require('express-handlebars');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 const sequelize = require('./config/connection');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -26,8 +27,9 @@ app.use(session({
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-//bootstrap
-//app.use(express.static(__dirname + ))
+// serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // Routes
 app.use('/', require('./controllers/index'));
