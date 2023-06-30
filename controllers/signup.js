@@ -15,7 +15,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'your_database'
+  database: 'gnk_db'
 });
 
 // Handle GET request to display the sign-up page
