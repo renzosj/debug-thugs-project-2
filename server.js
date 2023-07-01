@@ -10,6 +10,8 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+
+
 // Load environment variables
 require('dotenv').config();
 
@@ -29,6 +31,7 @@ app.set('view engine', 'handlebars');
 
 // serve static files
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 // Routes
