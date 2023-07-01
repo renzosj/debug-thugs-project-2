@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const Users = require('../models/Users');
+const { Users, Chats, Chats_Users_Mapping } = require('../models');
 
 // About route (GET)
 router.get('/about', (req, res) => {
@@ -25,11 +25,13 @@ router.post('/login', async (req, res) => {
     where: {
       user_name: username,
       password: password
-    }
+    },
+    include: [{model: Chats}]
   });
 
-  //console.log(userData);
+  
   const user = userData.get({ plain: true});
+  console.log(user);
 /*
   // Sample user logins for testing
   const sampleUsers = [
