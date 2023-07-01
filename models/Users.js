@@ -51,9 +51,9 @@ Users.init(
           //check for correct format -- double check if this is necessary
         },
         created_date: {
-          type: DataTypes.DATETIME,
+          type: DataTypes.DATE,
           allownull: false,
-          defaultValue: sequelize.NOW
+          defaultValue: DataTypes.NOW
         }
       }
     },
