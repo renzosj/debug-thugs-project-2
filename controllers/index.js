@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+
 const { Users, Chats, Chats_Users_Mapping } = require('../models');
 
 // About route (GET)
@@ -70,7 +71,32 @@ router.post('/signup', (req, res) => {
   req.session.loggedIn = true;
   req.session.username = req.body.username;
   
-  res.redirect('/user/dashboard');
+  const { username, password, firstName, lastName, email, bedtime } = req.body;
+  console.log(req.body)
+  // Insert user data into the database
+//   connection.query(
+//     'INSERT INTO users (user_name, password, first_name, last_name, email, bed_time) VALUES (?, ?, ?, ?, ?, ?)',
+//     [username, password, firstName, lastName, email, bedtime],
+//     (error, results, fields) => {
+//       if (error) {
+//         console.log('Error saving user to database:', error);
+//         res.sendStatus(500);
+//         return;
+//       }
+
+//       // Set up session and cookie
+//       req.session.username = username;
+//       res.cookie('username', username);
+
+//       // Redirect to user dashboard
+//       res.redirect('/user/dashboard');
+//     }
+//   );
+
+Users.create({...req.body}).then (function (data){
+    console.log(data)
+})
+
 });
 
 // homepage route
@@ -85,5 +111,6 @@ router.get('/homepage', (req, res) => {
 });
 
 router.use('/user', require('./user_view'));
+
 
 module.exports = router;
