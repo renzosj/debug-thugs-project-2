@@ -7,6 +7,11 @@
         </form>
     </nav>
     
+    <main class="d-flex flex-column">
+        <div class="jumbotron m-2 p-5 d-flex flex-column justify-content-center align-items-center">
+            <h1 class="display-1 ">Goodnight, King</h1>
+            <p class="lead">You deserve it.</p>
+            <img id="crown-img" src="../public/assets/images/gnk-logo-proto-01.png" alt="graphic of a crown that wobbles when hovered" width="275" height="175">
     <section class="d-flex flex-column">
         <div class="jumbotron m-2 p-5 d-flex flex-column justify-content-center align-items-center">
             <h1 class="display-1 ">Goodnight, King</h1>
@@ -21,16 +26,21 @@
             <p>Don't have an account?</p>
             <p class="lead">
                 <a class="btn btn-primary btn-lg" href="{{signup}}" role="button">Sign up</a>
-
             </p>
-
         </div>
     </section>
 
+    <nav>
+        {{!-- Add links to Log-in, Sign-up, and About page --}}
+        <a href="/login">Log-in</a>
+        <a href="/signup">Sign-Up</a>
+        <a href="/about">About</a>
+    </nav>
+    
     <footer>
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.03);">
         <p>debug thugs ©️ 2023</p>
         </div>
     </footer>
-
+    
 </main>

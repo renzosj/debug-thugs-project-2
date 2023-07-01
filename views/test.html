@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../public/css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/userprofile.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/chatbox.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-dark position-fixed w-100" style="top: 0;">
+            <a class="navbar-brand">
+                <img src="../public/assets/images/gnk-logo-proto-01.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                <span class="header-text text-white">Welcome to your dashboard</span>
+            </a>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <div class="row">
+        <!-- Navbar menu -->
+        <div class="col-md-2">
+            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active py-3 border-bottom">
+                        <i class="fa fa-home"></i>
+                        <small>Home</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link py-3 border-bottom">
+                        <i class="fa fa-dashboard"></i>
+                        <small>Dashboard</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link py-3 border-bottom">
+                        <i class="fa fa-first-order"></i>
+                        <small>Chats</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link py-3 border-bottom">
+                        <i class="fa fa-cog"></i>
+                        <small>Profile Settings</small>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+         <!-- Message application -->
+         <div class="col-md-6">
+            <div class="card card-bordered">
+                <div class="card-header">
+                    <h4 class="card-title"><strong>Name of person chatting with here</strong></h4>
+                </div>
+                <div class="ps-container ps-theme-default ps-active-y" id="chat-content">
+                            <!-- <a class="btn btn-xs btn-secondary" href="#" data-abc="true">Let's Chat App</a> -->
+                          </div>
+            
+            
+                          <div class="ps-container ps-theme-default ps-active-y" id="chat-content" style="overflow-y: scroll !important; height:400px !important;">
+                            <div class="media media-chat">
+                              <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                              <div class="media-body">
+                                <p>Hi</p>
+                                <p>How are you ...???</p>
+                                <p>What are you doing tomorrow?<br> Can we come up a bar?</p>
+                                <p class="meta"><time datetime="2018">23:58</time></p>
+                              </div>
+                            </div>
+            
+                            <div class="media media-meta-day">Today</div>
+            
+                            <div class="media media-chat media-chat-reverse">
+                              <div class="media-body">
+                                <p>Hiii, I'm good.</p>
+                                <p>How are you doing?</p>
+                                <p>Long time no see! Tomorrow office. will be free on sunday.</p>
+                                <p class="meta"><time datetime="2018">00:06</time></p>
+                              </div>
+                            </div>
+            
+                            <div class="media media-chat">
+                              <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                              <div class="media-body">
+                                <p>Okay</p>
+                                <p>We will go on sunday? </p>
+                                <p class="meta"><time datetime="2018">00:07</time></p>
+                              </div>
+                            </div>
+            
+                            <div class="media media-chat media-chat-reverse">
+                              <div class="media-body">
+                                <p>That's awesome!</p>
+                                <p>I will meet you Sandon Square sharp at 10 AM</p>
+                                <p>Is that okay?</p>
+                                <p class="meta"><time datetime="2018">00:09</time></p>
+                              </div>
+                            </div>
+            
+                            <div class="media media-chat">
+                              <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                              <div class="media-body">
+                                <p>Okay i will meet you on Sandon Square </p>
+                                <p class="meta"><time datetime="2018">00:10</time></p>
+                              </div>
+                            </div>
+            
+                            <div class="media media-chat media-chat-reverse">
+                              <div class="media-body">
+                                <p>Do you have pictures of Matley Marriage?</p>
+                                <p class="meta"><time datetime="2018">00:10</time></p>
+                              </div>
+                            </div>
+            
+                            <div class="media media-chat">
+                              <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                              <div class="media-body">
+                                <p>Sorry I don't have. i changed my phone.</p>
+                                <p class="meta"><time datetime="2018">00:12</time></p>
+                              </div>
+                            </div>
+            
+                            <div class="media media-chat media-chat-reverse">
+                              <div class="media-body">
+                                <p>Okay then see you on sunday!!</p>
+                                <p class="meta"><time datetime="2018">00:12</time></p>
+                              </div>
+                            </div>
+            
+                        </div>
+                        <div class="publisher bt-1 border-light">
+                            <input class="publisher-input" type="text" placeholder="Write something">
+                            <a class="btn btn-primary btn-sm" href="#" data-abc="true">Send</a>
+                        </div>
+                    </div>
+                </div>
+        <!-- User profile -->
+        <div class="col-md-4">
+            <div class="card p-3">
+                <div class="d-flex align-items-center">
+                    <div class="image">
+                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" class="rounded" width="155">
+                    </div>
+                    <div class="ml-3 w-100">
+                        <h4 class="mb-0 mt-0">Alex HMorrision</h4>
+                        <span>Senior Journalist</span>
+                        <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                            <div class="d-flex flex-column">
+                                <span class="articles">Articles</span>
+                                <span class="number1">38</span>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <span class="followers">Followers</span>
+                                <span class="number2">980</span>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <span class="rating">Rating</span>
+                                <span class="number3">8.9</span>
+                            </div>
+                        </div>
+                        <div class="button mt-2 d-flex flex-row align-items-center">
+                            <button class="btn btn-sm btn-outline-primary w-100">Chat</button>
+                            <button class="btn btn-sm btn-primary w-100 ml-2">Follow</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
