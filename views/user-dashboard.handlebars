@@ -1,4 +1,4 @@
-<h1>Welcome to your dashboard {{first_name}}!</h1>
+<h1>Welcome to your dashboard {{user.first_name}}!</h1>
 
 <div class="d-flex flex-column flex-shrink-0 bg-light vh-100" style="width: 100px;">
   <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
@@ -29,9 +29,13 @@
   </div>
 </div>
 
+{{#each chats as |chat|}}
 <p>
   Has chats: {{chat_name}}
 </p>
+{{/each}}
+
+<a href="/message">Send a message</a>
 
 
 {{!-- prototype dashboard, purely for functionality testing
@@ -41,15 +45,15 @@
 i just put em there as ideas and will be replaced with bootstrap ones most likely --}}
 <div class="user-card">
   <div class="user-card-header">
-    {{user_name}}'s Profile
+    {{user.user_name}}'s Profile
   </div>
   <div class="user-card-body">
     <p>
-      My bed time is: {{bed_time}}
+      My bed time is: {{user.bed_time}}
     </p>
     <p>
       Email:
-      {{email}}
+      {{user.email}}
     </p>
     {{!-- Idea for gender choice feature, king queen, squire, jester, etc. --}}
     {{!-- {{#if has_nuts}}
