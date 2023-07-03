@@ -52,7 +52,7 @@ Users.init(
         },
         created_date: {
           type: DataTypes.DATE,
-          allownull: false,
+          allownull: true,
           defaultValue: DataTypes.NOW
         }
       }

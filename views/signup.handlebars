@@ -1,104 +1,92 @@
-<!DOCTYPE html>
-<html>
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Sign Up</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-</head>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up here, my liege</p>
 
-<body>
-  <section class="vh-100" style="background-color: #eee;">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-lg-12 col-xl-11">
-          <div class="card text-black" style="border-radius: 25px;">
-            <div class="card-body p-md-5">
-              <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
-
-                  <form id="signup"  class="mx-1 mx-md-4">
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example1c" class="form-control" />
-                        <label class="form-label" for="form3Example1c">Username</label>
-                      </div>
+                <form method="POST" action="/signup" id="signup" class="mx-1 mx-md-4">
+                  {{!-- Username input --}}
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="username" class="form-control" placeholder="KingVizzyT" name="user_name" />
+                      <label class="form-label" for="username">Username</label>
                     </div>
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input type="email" id="form3Example3c" class="form-control" />
-                        <label class="form-label" for="form3Example3c">Your Email</label>
-                      </div>
+                  </div>
+                  {{!-- First name input --}}
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="fName" class="form-control" placeholder="Viserys" name="first_name" />
+                      <label class="form-label" for="fName">First name</label>
                     </div>
-
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example6c" class="form-control" />
-                        <label class="form-label" for="form3Example3c">first name</label>
-                      </div>
+                  </div>
+                  {{!-- Last name input --}}
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="lName" class="form-control" placeholder="Targaryen" name="last_name" />
+                      <label class="form-label" for="lName">Last name</label>
                     </div>
-
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example7c" class="form-control" />
-                        <label class="form-label" for="form3Example3c">last name</label>
-                      </div>
+                  </div>
+                  {{!-- Email input --}}
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="email" class="form-control" placeholder="VthePeaceful@kingslanding.west"
+                        name="email" />
+                      <label class="form-label" for="email">Your Email</label>
                     </div>
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input type="password" id="form3Example4c" class="form-control" />
-                        <label class="form-label" for="form3Example4c">Password</label>
-                      </div>
+                  </div>
+                  {{!-- Password --}}
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" id="password" class="form-control" placeholder="b3waretheL0ngN8"
+                        name="password">
+                      <label class="form-label" for="password">Password</label>
                     </div>
-
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example4cd" class="form-control" />
-                        <label class="form-label" for="form3Example4cd">Preferred Bedtime</label>
-                      </div>
+                  </div>
+                  {{!-- bedtime input: turn this into a time select html --}}
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="bed_time" class="form-control" placeholder="10pm westerosi standard"
+                        name="bed_time" />
+                      <label class="form-label" for="bed_time">Preferred Bedtime</label>
                     </div>
+                  </div>
 
-                    <div class="form-check d-flex justify-content-center mb-5">
-                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                      <label class="form-check-label" for="form2Example3">
-                        I agree to all statements in <a href="#!">Terms of service</a>
-                      </label>
-                    </div>
+                  <div class="form-check d-flex justify-content-center mb-5">
+                    <input class="form-check-input me-2" type="checkbox" value="true" id="terms" name="box_check" />
+                    <label class="form-check-label" for="terms">
+                      I hereby declare allegiance to the regency of <a href="#!">Terms of Service</a>
+                    </label>
+                  </div>
 
-                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="submit" class="btn btn-primary btn-lg">Register</button>
-                    </div>
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                  </div>
 
-                  </form>
+                </form>
 
-                </div>
-                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                  <img src="../public/assets/images/gnk-logo-proto-01.png" class="img-fluid" alt="Sample image">
+                <img src="assets/images/gnk-logo-proto-01.png" class="img-fluid" alt="Sample image">
 
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <script src="/scripts/signup.js"></script>
-</body>
-
-</html>
+  </div>
+</section>
+{{!--
+<script src="/scripts/signup.js"></script> --}}
