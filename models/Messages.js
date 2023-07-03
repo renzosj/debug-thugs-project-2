@@ -1,4 +1,4 @@
-const { Model, DataTypes, TINYINT } = require('sequelize');
+const { Model, DataTypes} = require('sequelize');
 //const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
@@ -20,7 +20,8 @@ Messages.init(
             references: {
                 model: 'chats',
                 key: 'chat_id'
-            }
+            },
+            allowNull: false
         },
         // Foreign Key
         user_id: {
@@ -28,7 +29,9 @@ Messages.init(
             references: {
                 model: 'users',
                 key: 'user_id'
-            }
+            },
+            allowNull: true,
+            defaultValue: 1
         },
         message_text: {
             type: DataTypes.TEXT,

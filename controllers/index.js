@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const { Users, Chats, Chats_Users_Mapping } = require('../models');
+const { Users, Chats } = require('../models');
 
 // About route (GET)
 router.get('/about', (req, res) => {
@@ -26,35 +26,27 @@ router.post('/login', async (req, res) => {
       user_name: username,
       password: password
     },
-    include: [{model: Chats}]
+    //include: [{model: Chats}]
   });
 
-  
+  //get user pk, render chats/messages by that pk
   const user = userData.get({ plain: true});
-  console.log(user);
-/*
-  // Sample user logins for testing
-  const sampleUsers = [
-    { username: 'xtina', password: '12345' },
-    { username: 'kings', password: '123' },
-  ];
-
-  // Find the user in the sampleUsers array
-  const user = sampleUsers.find(user => user.username === username && user.password === password);
-*/
+  //console.log(user);
 
   // Perform authentication logic here, e.g., check if the user exists in the database
   if (user) {
     // Set session and cookie
-    req.session.loggedIn = true;
+    req.session.loggedIn = true ;
     req.session.username = username;
-    res.render('user-dashboard', user);
+    
+    // destructrue user_id and pass it as param in user/dashboard/endpoint
+    const { user_id } = user;
+    res.redirect(`/user/dashboard/${user_id}`)
+    //res.render('user-dashboard', { user, chats });
   } else {
     // Invalid credentials
     res.render('login', { error: 'Invalid username or password' });
   }
-
-
 });
 
 // Sign up route (GET)
@@ -84,6 +76,7 @@ router.get('/homepage', (req, res) => {
   }
 });
 
-router.use('/user', require('./user_view'));
+router.use('/user', require('./user'));
+router.use('/message', require('./message')); 
 
 module.exports = router;

@@ -1,0 +1,30 @@
+<main class="container-fluid">
+    <h1>Welcome to Message View</h1>
+    <form method="POST" action="/message">
+        {{!-- Write message Content --}}
+        <div class="form-outline">
+            <label for="sendMessageContent">Write your message here: </label>
+            <textarea
+             class="form-control"
+             id="sendMessageContent"
+             rows="8"
+             name="message_text"
+             placeholder="Have a goodnight, king 👑!"></textarea>
+        </div>
+        <br>
+        {{!-- Choose recipients --}}
+        <div class="form-group">
+            <label for="sendMessageRecip">Who would you like to send this to?</label>
+            <input class="form-control" id="sendMessageRecip" name="chat_id" placeholder="King Mufasa, Queen Rhaenyra..." />
+        </div>
+        <br>
+        {{!-- Send at bedtime or instantly --}}
+        <div class="form-check">
+            <label class="form-check-label" for="sendAtBedTime">Send message at Bed Time?</label>
+            <input type="checkbox" class="form-check-input" id="sendAtBedTime" value="1" />
+        </div>
+        <br>
+        {{!-- Submit Button --}}
+        <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+    </form>
+</main>
