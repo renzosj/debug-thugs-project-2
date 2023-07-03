@@ -30,8 +30,7 @@ Messages.init(
                 model: 'users',
                 key: 'user_id'
             },
-            allowNull: true,
-            defaultValue: 1
+            allowNull: false
         },
         message_text: {
             type: DataTypes.TEXT,
@@ -42,9 +41,9 @@ Messages.init(
             allownull: false,
             defaultValue: DataTypes.NOW
         },
-        delay_send: DataTypes.TINYINT,
+        delay_send: DataTypes.BOOLEAN,
         allowNull: false,
-        defaultValue: 0
+        defaultValue: true
     },
     {
         sequelize,

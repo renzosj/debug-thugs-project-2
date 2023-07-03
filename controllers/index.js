@@ -4,6 +4,11 @@ const express = require('express');
 const router = express.Router();
 const { Users, Chats } = require('../models');
 
+// Homepage route (GET)
+router.get('/', (req, res) => {
+  res.render('homepage'); 
+});
+
 // About route (GET)
 router.get('/about', (req, res) => {
   res.render('about');
@@ -33,14 +38,17 @@ router.post('/login', async (req, res) => {
   const user = userData.get({ plain: true});
   //console.log(user);
 
+  // destructure user_id and pass it as param in user/dashboard/endpoint
+  // also stored in session as user_id, to be used in other endpoints
+  const { user_id } = user;
+
   // Perform authentication logic here, e.g., check if the user exists in the database
   if (user) {
     // Set session and cookie
     req.session.loggedIn = true ;
     req.session.username = username;
+    req.session.userID = user_id;
     
-    // destructrue user_id and pass it as param in user/dashboard/endpoint
-    const { user_id } = user;
     res.redirect(`/user/dashboard/${user_id}`)
     //res.render('user-dashboard', { user, chats });
   } else {

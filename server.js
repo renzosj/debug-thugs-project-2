@@ -3,14 +3,11 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const exphbs = require('express-handlebars');
 const nodemailer = require('nodemailer');
-const dotenv = require('dotenv');
 const sequelize = require('./config/connection');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-
 
 // Load environment variables
 require('dotenv').config();
@@ -32,16 +29,12 @@ app.set('view engine', 'handlebars');
 // serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
 // Routes
 app.use('/', require('./controllers/index'));
-app.get('/', (req, res) => {
-  res.render('homepage'); 
+
+app.get('/email', (req, res) => {
+  res.render('email');
 });
-  app.get('/email', (req, res) => {
-    res.render('email');
-  });
 
 
 // Send email route
