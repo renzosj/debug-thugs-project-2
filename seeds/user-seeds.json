@@ -5,5 +5,47 @@
         "last_name": "San Juan",
         "email": "rcsanjuan96@gmail.com",
         "password": "parseword"
+    },
+    {
+        "user_name": "user1",
+        "first_name": "Renzo",
+        "last_name": "San Juan",
+        "email": "test1@test.com",
+        "password": "password"
+    },
+    {
+        "user_name": "user2",
+        "first_name": "Matt",
+        "last_name": "Miceli",
+        "email": "test2@test.com",
+        "password": "password"
+    },
+    {
+        "user_name": "user3",
+        "first_name": "Christina",
+        "last_name": "Hoang",
+        "email": "test3@test.com",
+        "password": "password"
+    },
+    {
+        "user_name": "user4",
+        "first_name": "Jorden",
+        "last_name": "Lockhart",
+        "email": "test4@test.com",
+        "password": "password"
+    },
+    {
+        "user_name": "user5",
+        "first_name": "Bia",
+        "last_name": "Shimizu",
+        "email": "test5@test.com",
+        "password": "password"
+    },
+    {
+        "user_name": "user6",
+        "first_name": "Bob",
+        "last_name": "McBob",
+        "email": "test6@test.com",
+        "password": "password"
     }
 ]
