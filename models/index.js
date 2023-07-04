@@ -12,7 +12,7 @@ Users.hasMany(Messages, {
 });
 
 // Looked into how sequelize does join tables, apparently we can create an empty model with sequelize.define and pass it "through"
-// needs review that this works as intended
+// needs review that this works as intended, UsersID
 Users.belongsToMany(Chats, {through: UserConversation});
 Chats.belongsToMany(Users, {through: UserConversation});
 
