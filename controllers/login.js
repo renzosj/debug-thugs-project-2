@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Users } = require('../models');
+const bcrypt = require('bcrypt');
 
 // Login route (GET)
 router.get('/', (req, res) => {
@@ -9,6 +10,7 @@ router.get('/', (req, res) => {
 
 // Login route (POST)
 router.post('/', async (req, res) => {
+    
     // Check username and password
     let { username, password } = req.body;
    /* console.log("\n" + username + " " + password + "\n");
@@ -22,8 +24,7 @@ router.post('/', async (req, res) => {
     // Find User 
     const userData = await Users.findOne({
         where: {
-            user_name: username,
-            password: password
+            user_name: username
         },
         //include: [{model: Chats}]
     });
@@ -34,6 +35,16 @@ router.post('/', async (req, res) => {
         return;
     }
 
+    // use `bcrypt.compare()` to compare the provided password and the hashed password
+    const validPassword = await bcrypt.compare(
+        req.body.password,
+        userData.password
+      );
+      // if they do not match, return error message
+      if (!validPassword) {
+        res.status(400).json({ message: 'Login failed. Please try again!' });
+        return;
+      }
     //get user pk, render chats/messages by that pk
     const user = userData.get({ plain: true });
     //console.log(user);

@@ -1,0 +1,15 @@
+[
+    {
+        "chat_id": 9,
+        "user_id": 1,
+        "message_text": "Get ready to present our project."
+    },{
+        "chat_id": 9,
+        "user_id": 5,
+        "message_text": "I'm not ready for this project"
+    },{
+        "chat_id": 9,
+        "user_id": 5,
+        "message_text": "Hopefully this is working correctly"
+    }
+]

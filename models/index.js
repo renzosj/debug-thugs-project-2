@@ -1,7 +1,7 @@
 const Users = require('./Users');
 const Messages = require('./Messages');
-const Chats = require('./Chats')
-//const Chats_Users_Mapping = require('./Chats_Users_Mapping');
+const Chats = require('./Chats');
+const Mappings = require('./Chats_Users_Mapping');
 const sequelize = require('../config/connection.js');
 
 const UserConversation = sequelize.define('UserConversation', {});
@@ -32,4 +32,4 @@ Messages.belongsTo(Users, {
 })
 
 
-module.exports = { Users, Chats, Messages };
+module.exports = { Users, Chats, Messages, Mappings };

@@ -18,7 +18,7 @@ Messages.init(
         chat_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'chats',
+                model: "Chats",
                 key: 'chat_id'
             },
             allowNull: false
@@ -27,7 +27,7 @@ Messages.init(
         user_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'users',
+                model: "Users",
                 key: 'user_id'
             },
             allowNull: false
