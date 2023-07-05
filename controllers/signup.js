@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
 
         const { user_id, user_name } = newUser;
 
-        // Set session and cookie
+        // Set session
         req.session.loggedIn = true;
         req.session.username = user_name;
         

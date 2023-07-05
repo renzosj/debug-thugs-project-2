@@ -9,12 +9,19 @@ router.get('/dashboard/:id', async (req, res) => {
         const userData = await Users.findByPk(user_id);
         const user = userData.get({ plain: true });
 
-       /* const chatData = await Chats.findAll({
+        const chatData = await Chats.findAll({
             where: {
                 user_id: user_id
             },
             //include: [{model: Users}]
-        });*/
+        });
+
+        if (!chatData) {
+            console.log("\nNo chats with user_id: " + user_id + " found\n");
+            res.render('user-dashboard', {user});
+        }
+
+        console.log('\n' + chatData + '\n');
 
       /*  let chats;
         if (chatData) {
@@ -37,13 +44,14 @@ router.get('/dashboard/:id', async (req, res) => {
 });
 
 
-router.get('/message', async (req, res) => {
+/* router.get('/message', async (req, res) => {
     try {
 
     } catch (err) {
         res.status(500).json(err);
     }
-});
+});*/
 
+router.use('/chats', require('./chats'));
 
 module.exports = router;

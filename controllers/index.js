@@ -36,10 +36,9 @@ router.get('/logout', (req, res) => {
 })
 
 
-router.use('/user', require('./user'));
+router.use('/user', require('./users-routes'));
 router.use('/login', require('./login'));
 router.use('/message', require('./message')); 
 router.use('/signup', require('./signup'));
-
 
 module.exports = router;

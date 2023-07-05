@@ -11,14 +11,11 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
     // Check username and password
     let { username, password } = req.body;
-   /* console.log("\n" + username + " " + password + "\n");
-    if (!username || !password) {
-        console.log('Empty login fields, please fill in form');
-        
-    }*/
+
     //trim
     username = username.trim();
     password = password.trim();
+    
     // Find User 
     const userData = await Users.findOne({
         where: {
