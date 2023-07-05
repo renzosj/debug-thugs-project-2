@@ -18,7 +18,7 @@ Chats_Users_Mapping.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'users',
+                model: "Users",
                 key: 'user_id'
             }
         },
@@ -26,7 +26,7 @@ Chats_Users_Mapping.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'chats',
+                model: "Chats",
                 key: 'chat_id'
             }
         },

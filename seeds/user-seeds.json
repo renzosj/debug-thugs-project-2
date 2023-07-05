@@ -1,12 +1,5 @@
 [
     {
-        "user_name": "tapsyTheKid",
-        "first_name": "Renzo",
-        "last_name": "San Juan",
-        "email": "rcsanjuan96@gmail.com",
-        "password": "parseword"
-    },
-    {
         "user_name": "user1",
         "first_name": "Renzo",
         "last_name": "San Juan",
@@ -47,5 +40,12 @@
         "last_name": "McBob",
         "email": "test6@test.com",
         "password": "password"
+    },
+    {
+        "user_name": "tapsyTheKid",
+        "first_name": "Renzo",
+        "last_name": "San Juan",
+        "email": "rcsanjuan96@gmail.com",
+        "password": "parseword"
     }
 ]

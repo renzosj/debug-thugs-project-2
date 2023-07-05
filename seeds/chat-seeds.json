@@ -1,0 +1,30 @@
+[
+    {
+        "user_id": 1,
+        "chat_name": "Chat with Matt"
+    },{
+        "user_id": 1,
+        "chat_name": "Chat with Christina"
+    },{
+        "user_id": 1,
+        "chat_name": "Chat with Jorden"
+    },{
+        "user_id": 1,
+        "chat_name": "Chat with Bia"
+    },{
+        "user_id": 1,
+        "chat_name": "Chat with Bob"
+    },{
+        "user_id": 1,
+        "chat_name": "Chat with Christina and Bia"
+    },{
+        "user_id": 2,
+        "chat_name": "Chat with Jordan"
+    },{
+        "user_id": 6,
+        "chat_name": "Chat with Bia"
+    },{
+        "user_id": 1,
+        "chat_name": "Chat with Debug Thugs"
+    }
+]
