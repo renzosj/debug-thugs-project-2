@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
     } else if (chatData.length > 1) {
         chats = chatData.map((chat) => chat.get({ plain: true }));
     } else {
-        chats = chatData.get({ plain: true });
+        chats = [chatData[0].get({ plain: true })];
     }
     console.log(chats);
     res.status(200).json(chats);
