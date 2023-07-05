@@ -12,6 +12,11 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
+// About route (GET)
+router.get('/chats', (req, res) => {
+  res.render('chats');
+});
+
 // homepage route
 router.get('/homepage', (req, res) => {
   // Check if the user is logged in
