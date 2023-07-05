@@ -25,7 +25,8 @@ router.post('/', async (req, res) => {
         req.session.username = user_name;
         
         res.redirect(`/user/dashboard/${user_id}`);
-    } catch (err) {
+    } catch (err) { 
+        console.log(err);
         res.status(500).json(err);
     }
 });
