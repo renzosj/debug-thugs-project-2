@@ -30,7 +30,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-app.use( require('./controllers'));
+app.use(require('./controllers'));
 
 app.get('/email', (req, res) => {
   res.render('email');

@@ -1,14 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const { Messages } = require('../models');
+const { Messages } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // Message route (GET)
-router.get('/', (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     res.render('message');
 });
 
 // Send a Message route (POST)
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
 
     const { message_text, chat_id, box_check } = req.body;
     let delay_send;
@@ -33,7 +34,6 @@ router.post('/', async (req, res) => {
     } catch (err) {
         res.json(err);
     }
-
 });
 
 module.exports = router;
