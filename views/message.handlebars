@@ -4,18 +4,15 @@
         {{!-- Write message Content --}}
         <div class="form-outline">
             <label for="sendMessageContent">Write your message here: </label>
-            <textarea
-             class="form-control"
-             id="sendMessageContent"
-             rows="8"
-             name="message_text"
-             placeholder="Have a goodnight, king 👑!"></textarea>
+            <textarea class="form-control" id="sendMessageContent" rows="8" name="message_text"
+                placeholder="Have a goodnight, king 👑!"></textarea>
         </div>
         <br>
         {{!-- Choose recipients --}}
         <div class="form-group">
             <label for="sendMessageRecip">Who would you like to send this to?</label>
-            <input class="form-control" id="sendMessageRecip" name="chat_id" placeholder="King Mufasa, Queen Rhaenyra..." />
+            <input class="form-control" id="sendMessageRecip" name="chat_id"
+                placeholder="King Mufasa, Queen Rhaenyra..." />
         </div>
         <br>
         {{!-- Send at bedtime or instantly --}}
@@ -24,6 +21,18 @@
             <input type="checkbox" class="form-check-input" id="sendAtBedTime" value="true" name="box_check" />
         </div>
         <br>
+
+        <section>
+            <h1>Email Form</h1>
+            <div class="form-check">
+                <label for="email">Recipient Email:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-check">
+                <label for="subject">Subject:</label>
+                <input type="text" name="subject" id="subject" required>
+            </div>
+        </section>
         {{!-- Submit Button --}}
         <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
     </form>
