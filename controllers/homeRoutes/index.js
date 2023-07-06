@@ -7,13 +7,8 @@ router.get('/', (req, res) => {
 });
 
 // Homepage route (GET)
-// If user is logged in, homepage redirects to user's dashboard
 router.get('/homepage', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('user/dashboard');
-  } else {
-    res.redirect('/');
-  }
+  res.redirect('/');
 });
 
 // About route (GET)
