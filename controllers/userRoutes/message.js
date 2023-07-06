@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { Messages } = require('../../models');
 const withAuth = require('../../utils/auth');
+const nodemailer = require('nodemailer');
 
 // Message route (GET)
 router.get('/', withAuth, async (req, res) => {
@@ -29,7 +30,39 @@ router.post('/', withAuth, async (req, res) => {
         })
         const newMessage = newMessageData.get({ plain: true});
         //console.log("Your new msg king!: " + newMessage);
-        res.json(newMessage);
+        
+        // plug in nodemailer 
+        const { email, subject, message_text } = newMessage;
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.GMAIL_USER,
+                pass: process.env.GMAIL_PASS
+            }
+        });
+        
+        // Define email options
+        const mailOptions = {
+            from: process.env.GMAIL_USER,
+            to: email,
+            subject: subject,
+            text: message_text
+        };
+        
+        // Send the email
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+                res.redirect('/'); // Redirect to an error page or handle the error accordingly
+            } else {
+                console.log('Email sent: ' + info.response);
+                res.redirect('/'); // Redirect to a success page or handle the success accordingly
+            }
+        });
+        
+        //res.json(newMessage);
+        res.render('/message');
+
         // render sent message page here
     } catch (err) {
         res.json(err);
