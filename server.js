@@ -31,6 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use(require('./controllers'));
+// API
+app.use('/api', require('./api/index'));
 
 app.get('/email', (req, res) => {
   res.render('email');
