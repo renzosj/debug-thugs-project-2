@@ -41,9 +41,11 @@ Messages.init(
             allownull: false,
             defaultValue: DataTypes.NOW
         },
-        delay_send: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: true
+        delay_send: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
+        } 
     },
     {
         sequelize,
