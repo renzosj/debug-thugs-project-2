@@ -1,36 +1,5 @@
 <h1>Welcome to your dashboard {{user.first_name}}!</h1>
 
-{{!-- <div class="d-flex flex-column flex-shrink-0 bg-light vh-100" style="width: 100px;">
-  <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-    <li class="nav-item"> <a href="#" class="nav-link active py-3 border-bottom"> <i class="fa fa-home"></i>
-        <small>Home</small> </a> </li>
-    <li> <a href="#" class="nav-link py-3 border-bottom"> <i class="fa fa-dashboard"></i> <small>Dashboard</small> </a>
-    </li>
-    <li> <a href="#" class="nav-link py-3 border-bottom"> <i class="fa fa-first-order"></i> <small>My Orders</small>
-      </a> </li>
-    <li> <a href="#" class="nav-link py-3 border-bottom"> <i class="fa fa-cog"></i> <small>Settings</small> </a> </li>
-    <li> <a href="#" class="nav-link py-3 border-bottom"> <i class="fa fa-bookmark"></i> <small>Bookmark</small> </a>
-    </li>
-  </ul>
-  <div class="dropdown border-top">
-    <a href="#"
-      class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle"
-      id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false"> <img src="https://github.com/mdo.png"
-        alt="mdo" width="24" height="24" class="rounded-circle"> </a>
-    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
-      <li><a class="dropdown-item" href="#">New project...</a></li>
-      <li><a class="dropdown-item" href="#">Settings</a></li>
-      <li><a class="dropdown-item" href="#">Profile</a></li>
-      <li>
-        <hr class="dropdown-divider">
-      </li>
-      <li><a class="dropdown-item" href="#">Sign out</a></li>
-    </ul>
-  </div>
-</div> --}}
-
-
-
 <div class="container mt-5">
         <div class="row">
             <div class="col-md-4">
@@ -45,19 +14,19 @@
             <div class="col-md-4">
                 <div class="card p-3">
                     <div class="d-flex flex-row mb-3"><img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f4ac.svg" width="70">
-                        <div class="d-flex flex-column ml-2"><span>Messages</span><span class="text-black-50"></span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                        <div class="d-flex flex-column ml-2"><span>Chats</span><span class="text-black-50"></span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
                     </div>
                     <h6>Check, send and reply to messages</h6>
-                    <div class="d-flex justify-content-between install mt-3"><span>Un-read messages(0)</span><span class="text-primary"><p><a href="/user/chats">Click Here</a></p><i class="fa fa-angle-right"></i></span></div>
+                    <div class="d-flex justify-content-between install mt-3"><span>Un-read Chats(0)</span><span class="text-primary"><p><a href="/user/chats">Click Here</a></p><i class="fa fa-angle-right"></i></span></div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card p-3">
-                    <div class="d-flex flex-row mb-3"><img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f4e7.svg" width="70">
-                        <div class="d-flex flex-column ml-2"><span>E-mail</span><span class="text-black-50"></span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
+                    <div class="d-flex flex-row mb-3"><img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f4e4.svg" width="70">
+                        <div class="d-flex flex-column ml-2"><span>Create message</span><span class="text-black-50"></span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
                     </div>
-                    <h6>Check, send, and reply to emails.</h6>
-                    <div class="d-flex justify-content-between install mt-3"><span>Un-read E-mails(0)</span><span class="text-primary"><p><a href="/email">Click Here</a></p><i class="fa fa-angle-right"></i></span></div>
+                    <h6>Create a new message to send to one of your Kings or Queens.</h6>
+                    <div class="d-flex justify-content-between install mt-3"><span>Un-read Messages(0)</span><span class="text-primary"><p><a href="/user/message">Click Here</a></p><i class="fa fa-angle-right"></i></span></div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -69,7 +38,7 @@
                     <div class="d-flex justify-content-between install mt-3"><span class="text-primary"><p><a href="/user/profile">Click Here</a></p><i class="fa fa-angle-right"></i></span></div>
                 </div>
             </div>
-            <div class="col-md-4">
+            {{!-- <div class="col-md-4">
                 <div class="card p-3">
                     <div class="d-flex flex-row mb-3"><img src="" width="70">
                         <div class="d-flex flex-column ml-2"><span>filler for now</span><span class="text-black-50">blahblah</span><span class="ratings"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></div>
@@ -77,64 +46,9 @@
                     <h6>gdsagefasrefsrgfgfhjdfgjdgjffg</h6>
                     <div class="d-flex justify-content-between install mt-3"><span class="text-primary"><p><a href="#">Default link</a></p><i class="fa fa-angle-right"></i></span></div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>
-    <nav>
-        {{!-- Add links to Log-in, Sign-up, and About page --}}
-        {{!-- <a href="/login">Log-in</a>
-        <a href="/signup">Sign-Up</a> --}}
-        <a class="btn btn-secondary btn-sm" href="/about" role="button">About</a>
-        <a class="btn btn-secondary btn-sm" href="/logout" role="button">Log-out</a>
-    </nav>
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-{{#each chats as |chat|}}
-<p>
-  Has chats: {{chat_name}}
-</p>
-{{/each}}
-
-<a href="/message">Send a message</a>
-<a class="btn btn-secondary btn-sm" href="/logout" role="button">Log out</a>
-
-
-{{!-- prototype dashboard, purely for functionality testing
-<h1>Welcome to your dashboard {{first_name}}!</h1>
-
-{{!-- class names have no corresponding css yet,
-i just put em there as ideas and will be replaced with bootstrap ones most likely --}}
-<div class="user-card">
-  <div class="user-card-header">
-    {{user.user_name}}'s Profile
-  </div>
-  <div class="user-card-body">
-    <p>
-      My bed time is: {{user.bed_time}}
-    </p>
-    <p>
-      Email:
-      {{user.email}}
-    </p>
-    {{!-- Idea for gender choice feature, king queen, squire, jester, etc. --}}
-    {{!-- {{#if has_nuts}}
-    <p class="has-nuts">
-      Contains Nuts
-    </p>
-    {{/if}} --}}
+    
