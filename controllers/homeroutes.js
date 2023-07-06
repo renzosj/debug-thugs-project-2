@@ -12,12 +12,12 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
-// About route (GET)
+// Chat/messages route (GET)
 router.get('/chats', (req, res) => {
   res.render('chats');
 });
 
-// About route (GET)
+// Userprofile route (GET)
 router.get('/userprofile', (req, res) => {
   res.render('userprofile');
 });
@@ -33,10 +33,11 @@ router.get('/homepage', (req, res) => {
   }
 });
 
-// Login route (GET)
+// Login failed route (GET)
 router.get('/login', (req, res) => {
     res.render('login');
 });
+
 
 //logout route
 router.get('/logout', (req, res) => {
