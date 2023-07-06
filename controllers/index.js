@@ -1,14 +1,8 @@
-// Christina adding routes and sessions to page
-
+// Controllers index
 const express = require('express');
 const router = express.Router();
 
-
-router.use('/user', require('./user'));
-router.use('/login', require('./login'));
-router.use('/message', require('./message')); 
-router.use('/signup', require('./signup'));
-router.use('/', require ('./homeroutes'));
-
+router.use('/', require ('./homeRoutes/index'));
+router.use('/user', require('./userRoutes/index'));
 
 module.exports = router;

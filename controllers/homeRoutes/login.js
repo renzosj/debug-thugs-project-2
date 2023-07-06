@@ -1,32 +1,31 @@
 const express = require('express');
 const router = express.Router();
-const { Users } = require('../models');
+const { Users } = require('../../models');
 const bcrypt = require('bcrypt');
 
 // Login route (GET)
 router.get('/', (req, res) => {
+  if (req.session.wasRedirected) {
+    alert("My liege! One must log in to see to their affairs");
+    req.session.wasRedirected = false;
+  }
     res.render('login');
 });
 
 // Login route (POST)
-router.post('/', async (req, res) => {
-    
+router.post('/', async (req, res) => { 
     // Check username and password
     let { username, password } = req.body;
-   /* console.log("\n" + username + " " + password + "\n");
-    if (!username || !password) {
-        console.log('Empty login fields, please fill in form');
-        
-    }*/
+
     //trim
     username = username.trim();
     password = password.trim();
+
     // Find User 
     const userData = await Users.findOne({
         where: {
             user_name: username
-        },
-        //include: [{model: Chats}]
+        }
     });
 
     if (!userData) {
@@ -45,12 +44,11 @@ router.post('/', async (req, res) => {
         res.status(400).json({ message: 'Login failed. Please try again!' });
         return;
       }
-    //get user pk, render chats/messages by that pk
-    const user = userData.get({ plain: true });
-    //console.log(user);
 
-    // destructure user_id and pass it as param in user/dashboard/endpoint
-    // also stored in session as user_id, to be used in other endpoints
+    // Serialize user data  
+    const user = userData.get({ plain: true });
+
+    // destructure user_id and stored in session as user_id, to be used in other endpoints
     const { user_id } = user;
 
     // Perform authentication logic here, e.g., check if the user exists in the database
@@ -60,24 +58,13 @@ router.post('/', async (req, res) => {
         req.session.username = username;
         req.session.userID = user_id;
 
-        console.log(`\n${req.session.loggedIn}, ${req.session.username}, ${req.session.userID}\n`);
+        //console.log(`\n${req.session.loggedIn}, ${req.session.username}, ${req.session.userID}\n`);
 
-        res.redirect(`/user/dashboard/${user_id}`)
-        //res.render('user-dashboard', { user, chats });
+        res.redirect(`/user/dashboard`)
     } else {
         // Invalid credentials
         res.render('login', { error: 'Invalid username or password' });
     }
 });
-
-router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-      req.session.destroy(() => {
-        res.status(204).end();
-      });
-    } else {
-      res.status(404).end();
-    }
-  });
 
 module.exports = router;

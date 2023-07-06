@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Users } = require('../models');
+const { Users } = require('../../models');
 
 // Sign up route (GET)
 router.get('/', (req, res) => {
