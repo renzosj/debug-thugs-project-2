@@ -5,10 +5,6 @@ const bcrypt = require('bcrypt');
 
 // Login route (GET)
 router.get('/', (req, res) => {
-  if (req.session.wasRedirected) {
-    alert("My liege! One must log in to see to their affairs");
-    req.session.wasRedirected = false;
-  }
     res.render('login');
 });
 
