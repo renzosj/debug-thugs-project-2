@@ -11,28 +11,29 @@ router.get('/', withAuth, async (req, res) => {
 
 // Send a Message route (POST)
 router.post('/', withAuth, async (req, res) => {
-
-    const { message_text, chat_id, box_check } = req.body;
-    let delay_send;
-    if (!box_check) {
-        delay_send = false;
-    } else {
-        delay_send = true;
-    }
-    const { userID, username } = req.session;
-    console.log(`\n${userID}: ${username} sends the message: '${message_text}' at chat with ID: ${chat_id} with delay send? ${delay_send}\n`);
     try {
+        const { chat_id, box_check } = req.body;
+        const originalMessageText = req.body.message_text
+        let delay_send;
+        if (!box_check) {
+            delay_send = false;
+        } else {
+            delay_send = true;
+        }
+        const { userID, username } = req.session;
+        console.log(`\n${userID}: ${username} sends the message: '${originalMessageText}' at chat with ID: ${chat_id} with delay send? ${delay_send}\n`);
+
         const newMessageData = await Messages.create({
-            message_text: message_text,
+            message_text: originalMessageText,
             chat_id: chat_id,
             user_id: userID,
             delay_send: delay_send
         })
-        const newMessage = newMessageData.get({ plain: true});
-        //console.log("Your new msg king!: " + newMessage);
-        
+        const newMessage = newMessageData.get({ plain: true });
+        console.log("Your new msg king!: " + newMessage);
+
         // plug in nodemailer 
-        const { email, subject, message_text } = newMessage;
+        const { email, subject, message_text } = req.body;
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -40,7 +41,7 @@ router.post('/', withAuth, async (req, res) => {
                 pass: process.env.GMAIL_PASS
             }
         });
-        
+
         // Define email options
         const mailOptions = {
             from: process.env.GMAIL_USER,
@@ -48,7 +49,7 @@ router.post('/', withAuth, async (req, res) => {
             subject: subject,
             text: message_text
         };
-        
+
         // Send the email
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
@@ -59,12 +60,11 @@ router.post('/', withAuth, async (req, res) => {
                 res.redirect('/'); // Redirect to a success page or handle the success accordingly
             }
         });
-        
-        //res.json(newMessage);
-        res.render('/message');
+
 
         // render sent message page here
     } catch (err) {
+        console.log(err);
         res.json(err);
     }
 });
