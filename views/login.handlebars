@@ -1,7 +1,7 @@
 <main class="container-fluid">
   <h1>Login</h1>
   <form method="POST" action="/login">
-    <div>
+    <div class="container-sm">
       <!-- username input -->
       <div class="form-outline mb-4">
         <input type="text" id="username" name="username" class="form-control" />
@@ -24,14 +24,16 @@
           </div>
         </div>
 
-        <div class="col">
+        {{!-- <div class="col">
           <!-- Simple link -->
-          <a href="#!">Forgot password?</a>
+          <a class="button-secondary">Forgot password?</a>
         </div>
-      </div>
+      </div> --}}
 
       <!-- Submit button -->
       <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+      <button type="submit" class="btn btn-secondary btn-block mb-4">Forgot Password</button>
+
       <!-- Register buttons -->
       <div class="text-center">
         <p>Not a member? <a href="#!">Register</a></p>
