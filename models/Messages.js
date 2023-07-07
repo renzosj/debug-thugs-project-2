@@ -14,7 +14,6 @@ Messages.init(
             primaryKey: true,
             autoIncrement: true
         },
-        // Foreign Key
         chat_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -22,9 +21,8 @@ Messages.init(
                 key: 'chat_id'
             },
             allowNull: true,
-            defaultValue: 0
+            defaultValue: null
         },
-        // Foreign Key
         user_id: {
             type: DataTypes.INTEGER,
             references: {
