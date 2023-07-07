@@ -1,13 +1,10 @@
 <main class="content">
     <link rel="stylesheet" href="/css/chatbox.css">
     <div class="container p-0">
-
 		<h1 class="h3 mb-3">Messages</h1>
-
 		<div class="card">
 			<div class="row g-0">
         			{{!-- threads --}}
-
 				<div class="container col-12 col-lg-5 col-xl-3 border-right">
 					<div class="px-4 d-none d-md-block">
 						<div class="d-flex align-items-center">
@@ -62,8 +59,7 @@
 
 					<div class="position-relative">
 						<div class="chat-messages p-4">
-							{{#each messages}}
-								{{#if isSentByCurrentUser}}
+							{{#each user.chats}}
 									<div class="chat-message-right pb-4">
 										<div>
 										<img src="{{currentUser_profileImage}}" class="rounded-circle mr-1" alt="{{currentUser_name}}" width="40" height="40">
@@ -74,7 +70,6 @@
 											{{message_text}}
 										</div>
 									</div>
-								{{else}}
 									<div class="chat-message-left pb-4">
 										<div>
 											<img src="{{otherUser_profileImage}}" class="rounded-circle mr-1" alt="{{otherUser_name}}" width="40" height="40">
@@ -85,7 +80,6 @@
 											{{message_text}}
 										</div>
 									</div>
-								{{/if}}
 							{{/each}}
 						</div>
 					</div>

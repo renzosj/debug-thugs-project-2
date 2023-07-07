@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Messages = require('../models/Messages');
+const Messages = require('../../models/Messages');
 
 // route to (GET) ALL THE Messages
 router.get('/', async (req, res) => {
