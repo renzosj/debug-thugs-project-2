@@ -20,8 +20,8 @@ Messages.init(
                 model: "Chats",
                 key: 'chat_id'
             },
-            allowNull: true,
-            defaultValue: null
+            allowNull: false,
+            defaultValue: 9
         },
         user_id: {
             type: DataTypes.INTEGER,
