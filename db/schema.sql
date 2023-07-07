@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS gnk_db;
+ DROP DATABASE IF EXISTS gnk_db;
 CREATE DATABASE gnk_db;
 
 USE gnk_db;

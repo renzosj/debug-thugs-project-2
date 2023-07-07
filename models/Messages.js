@@ -21,7 +21,8 @@ Messages.init(
                 model: "Chats",
                 key: 'chat_id'
             },
-            allowNull: false
+            allowNull: true,
+            defaultValue: 9
         },
         // Foreign Key
         user_id: {

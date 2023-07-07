@@ -185,32 +185,43 @@ router.get('/user/message', withAuth, async (req, res) => {
 router.post('/user/message', withAuth, async (req, res) => {
     try {
         const { box_check } = req.body;
-        const recip_user_name = req.body.user_name;
-        const originalMessageText = req.body.message_text
+        const originalMessageText = req.body.message_text;
         let delay_send;
         if (!box_check) {
             delay_send = false;
         } else {
             delay_send = true;
         }
-        const { userID, username } = req.session;
-        console.log(`\n${userID}: ${username} sends the message: '${originalMessageText}' to user: ${recip_user_name} with delay send? ${delay_send}\n`);
+        const { userID } = req.session;
+
+
+        //console.log(`\n${userID}: ${username} sends the message: '${originalMessageText}' to user: ${recipient_user_name} with delay send? ${delay_send}\n`);
 
         //Find recipient user model
-        const userRecipData = await Users.findOne({ where: { user_name: recip_user_name } });
+        // const userRecipientData = await Users.findOne({ 
+        //     where: { user_name: recipient_user_name } },
+        //     {
+        //         include: [ 
+        //             {
+        //                 model: Chats,
+        //                 include: [Messages]
+        //             } 
+        //         ]
+        //     });
 
-        if (userRecipData) {
-            res.status(500).json("Recipient User not found. Please try again with valid recipient user name");
-        }
+    
+        // check if there is user data for recipient
+        // if (!userRecipientData) {
+        //     res.status(500).json("Recipient User not found. Please try again with valid recipient user name");
+        // }
 
-        const userRecip = userRecipData.get({ plain: true });
+        // const userRecipient = [userRecipientData[0].get({ plain: true })];
 
-        console.log("\nUser recip: " + userRecip + "\n");
+        // console.log("\nUser recip: " + userRecipient + "\n");
         
 
         const newMessageData = await Messages.create({
             message_text: originalMessageText,
-            chat_id: chat_id,
             user_id: userID,
             delay_send: delay_send
         })
