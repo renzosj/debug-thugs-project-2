@@ -2,7 +2,6 @@ const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const exphbs = require('express-handlebars');
-const nodemailer = require('nodemailer');
 const sequelize = require('./config/connection');
 const path = require('path');
 
@@ -31,10 +30,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use(require('./controllers'));
-// API
-app.use('/api', require('./api/index'));
 
 // Start the server with sequelize
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Users = require('../models/Users');
+const Users = require('../../models/Users');
 
 // route to (GET) ALL THE USERS
 router.get('/', async (req, res) => {
@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const userData = await Users.findByPk(req.params.id);
-        await User.destroy({
+        await Users.destroy({
             where: {
                 user_id: req.params.id
             }

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Chats = require('../models/Chats');
+const Chats = require('../../models/Chats');
 
 // route to (GET) ALL THE Chats
 router.get('/', async (req, res) => {
