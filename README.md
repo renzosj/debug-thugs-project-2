@@ -3,22 +3,11 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-AS A… friend who's a working professional,
-I WANT… to check in on my friends by sending them online notes & affirmations
-SO THAT… we stave off societal isolation & nihilistic temptation
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-
+AS A… friend who's a working professional,  
+I WANT… to check in on my friends by sending them online notes & affirmations  
+SO THAT… we stave off societal isolation & nihilistic temptation  
 
 ## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -28,19 +17,60 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Here are the steps needed to access the project for development:    
+
+Step 1: 
+
+    $ npm i
+
+Step 2: 
+
+    $ mysql -uroot -p
+    Enter password: ********
+    Welcome to the MySQL monitor.  Commands end with ; or \g.
+    Your MySQL connection id is 8
+    Server version: 8.0.33 MySQL Community Server - GPL
+
+    Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+    Oracle is a registered trademark of Oracle Corporation and/or its
+    affiliates. Other names may be trademarks of their respective
+    owners.
+
+    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+    mysql> source db/schema.sql
+
+Step 3:
+
+    $ npm run seeds
+
+Step 4: 
+
+    $ npm start
+
+Step 5: 
+
+    Access site: localhost:3000  
+
+
 
 ## Usage
+Landing page:  
+![alt text](public/assets/images/landing-page.jpg)  
 
-Provide instructions and examples for use. Include screenshots as needed.
+Sign-up page:  
+![alt text](public/assets/images/sign-up-page.jpg)  
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Login page:  
+![alt text](public/assets/images/login-page.jpg)  
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Dashboard:  
+![alt text](public/assets/images/dashboard.jpg)
 
 ## Credits
+
+Sequelize documentation: https://sequelize.org/docs/v6/  
 
 **Contributors:**  
 Bia Shimizu-Reynolds: https://github.com/luxardOri  
@@ -81,4 +111,8 @@ SOFTWARE.
 
 ## Features
 
-If your project has a lot of features, list them here.
+- Add in a friend list.
+- Send message at bedtime.
+- In the future we would like to build out the profile page:  
+![alt text](public/assets/images/profile-settings.jpg)
+
