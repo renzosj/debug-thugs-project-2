@@ -22,7 +22,7 @@ Messages.init(
                 key: 'chat_id'
             },
             allowNull: true,
-            defaultValue: 9
+            defaultValue: 0
         },
         // Foreign Key
         user_id: {
