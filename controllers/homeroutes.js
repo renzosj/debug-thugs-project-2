@@ -185,7 +185,7 @@ router.get('/user/message', withAuth, async (req, res) => {
 router.post('/user/message', withAuth, async (req, res) => {
     try {
         const { box_check } = req.body;
-        const originalMessageText = req.body.message_text;
+        // const originalMessageText = req.body.message_text;
         let delay_send;
         if (!box_check) {
             delay_send = false;
@@ -220,13 +220,13 @@ router.post('/user/message', withAuth, async (req, res) => {
         // console.log("\nUser recip: " + userRecipient + "\n");
         
 
-        const newMessageData = await Messages.create({
-            message_text: originalMessageText,
-            user_id: userID,
-            delay_send: delay_send
-        })
-        const newMessage = newMessageData.get({ plain: true });
-        console.log("Your new msg king!: " + newMessage);
+        // const newMessageData = await Messages.create({
+        //     message_text: originalMessageText,
+        //     user_id: userID,
+        //     delay_send: delay_send
+        // })
+        // const newMessage = newMessageData.get({ plain: true });
+        // console.log("Your new msg king!: " + newMessage);
 
         // plug in nodemailer 
         const { email, subject, message_text } = req.body;
